@@ -33,31 +33,6 @@
         });
     };
 
-    // Format an EmailAddressDetails object as
-    // GivenName Surname <emailaddress>
-    function buildEmailAddressString(address) {
-        return address.displayName + " &lt;" + address.emailAddress + "&gt;";
-    }
-
-    // Take an array of EmailAddressDetails objects and
-    // build a list of formatted strings, separated by a line-break
-    function buildEmailAddressesString(addresses) {
-        if (addresses && addresses.length > 0) {
-            var returnString = "";
-
-            for (var i = 0; i < addresses.length; i++) {
-                if (i > 0) {
-                    returnString = returnString + "<br/>";
-                }
-                returnString = returnString + buildEmailAddressString(addresses[i]);
-            }
-
-            return returnString;
-        }
-
-        return "None";
-    }
-
     // Helper function for displaying notifications
     function showNotification(header, content) {
         $("#notificationHeader").text(header);
@@ -76,7 +51,7 @@
 
                 const msgTo = asyncResult.value;
 
-                const userName = buildEmailAddressString(msgTo[i].emailAddress);
+                const userName = msgTo[0].displayName || msgTo[0].emailAddress;
 
                 const greetingMsg = `Hi ${userName},`;
 
