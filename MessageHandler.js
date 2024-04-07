@@ -17,7 +17,7 @@
 
 
             // Registers an event handler to identify when messages are selected.
-            Office.context.mailbox.addHandlerAsync(Office.EventType.RecipientsChanged, writeGreetingsForRecipients, (asyncResult) => {
+            Office.context.mailbox.item.addHandlerAsync(Office.EventType.RecipientsChanged, writeGreetingsForRecipients, (asyncResult) => {
 
                 if (asyncResult.status === Office.AsyncResultStatus.Failed) {
 
