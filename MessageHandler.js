@@ -51,6 +51,11 @@
 
                 const msgTo = asyncResult.value;
 
+                if (msgTo.length == 0) {
+
+                    return;
+                }
+
                 const userName = msgTo[0].displayName || msgTo[0].emailAddress;
 
                 const greetingMsg = `Hi ${userName},`;
