@@ -56,7 +56,11 @@
                     return;
                 }
 
-                const userName = msgTo[0].displayName || msgTo[0].emailAddress.match(/^([^@]*)@/)[1];
+                const userName = msgTo[0].displayName || msgTo[0].emailAddress;
+
+                const nameMatching = userName.match(/^([^@]*)@/);
+
+                userName = nameMatching ? nameMatching[1] : userName;
 
                 const greetingMsg = `Hi ${userName},`;
 
