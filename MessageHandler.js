@@ -56,7 +56,7 @@
                     return;
                 }
 
-                const userName = msgTo[0].displayName || msgTo[0].emailAddress;
+                let userName = msgTo[0].displayName || msgTo[0].emailAddress;
 
                 const nameMatching = userName.match(/^([^@]*)@/);
 
