@@ -60,7 +60,7 @@
                     .mailbox
                     .item
                     .body
-                    .setAsync(
+                    .setSelectedDataAsync(
                         greetingMsg,
                         {
                             coercionType: "html",
